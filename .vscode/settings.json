@@ -1,0 +1,4 @@
+{
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe", //For windows only
+    "php.validate.executablePath": "C:\\xampp\\php\\php.exe"
+}

@@ -1,0 +1,5 @@
+vendor/
+mycode/
+.phpunit.result.cache
+composer.lock
+output.txt
