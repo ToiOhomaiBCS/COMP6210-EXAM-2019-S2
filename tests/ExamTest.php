@@ -28,7 +28,77 @@ class ExamTest extends TestCase
     $this->assertEquals("W", $exam->HelloWorld()[6]);
   }
 
-  public function test_Q03_ShowNumberOfCarsFromASelectedYear()
+
+  public function test_Q03_CheckIfMondayIsPartOfArray()
+  {
+    $exam = new \YOUR_WORK\Exam2019();
+
+    $needle = "Monday";
+
+    $this->assertContains($needle, $exam->FourDayIncludedMonday());
+  }
+
+  public function test_Q04_CheckIfMondayIsNotPartOfArray()
+  {
+    $exam = new \YOUR_WORK\Exam2019();
+
+    $needle = "Monday";
+
+    $this->assertNotContains($needle, $exam->FourDayNotIncludedMonday());
+  }
+
+  public function test_Q05_SumOfTwoNumbers()
+  {
+     $exam = new \YOUR_WORK\Exam2019();
+
+     $num1 = NULL; 
+     $num2 = NULL;
+
+     $expected = $num1 + $num2;
+
+     $this->assertEquals($expected, $exam->SumOfTwoNumbers($num1, $num2));
+  }
+
+  public function test_Q06_ProductOfThreeNumbers()
+  {
+    $exam = new \YOUR_WORK\Exam2019();
+
+    $num1 = NULL; 
+    $num2 = NULL;
+    $num3 = NULL;
+
+    $expected = $num1 * $num2 * $num3;
+
+    $this->assertEquals($expected, $exam->ProductOfThreeNumbers($num1, $num2, $num3));
+  }
+
+  public function test_Q07_CheckEqualValues()
+  {
+    $exam = new \YOUR_WORK\Exam2019();
+
+    $a = 5;
+    $b = "5";
+
+    $expected = ($a == $b);
+  
+    $this->assertTrue($expected);
+    $this->assertEquals($expected, $exam->CheckEqualValues($a, $b));
+  }
+
+  public function test_Q08_CheckEqualValueAndTypes()
+  {
+    $exam = new \YOUR_WORK\Exam2019();
+
+    $a = 5;
+    $b = 5;
+
+    $expected = ($a === $b);
+  
+    $this->assertTrue($expected);
+    $this->assertEquals($expected, $exam->CheckEqualValueAndTypes($a, $b));
+  }
+
+  public function test_Q09_ShowNumberOfCarsFromASelectedYear()
   {
       $data = file_get_contents(dirname(__DIR__).'/YOUR_WORK/data.json');
       $array = json_decode($data, true);
@@ -47,7 +117,7 @@ class ExamTest extends TestCase
       $this->assertEquals($total, $exam->CarsFromAParticularYear($year));
   }
 
-  public function test_Q04_ShowNumberOfFords()
+  public function test_Q10_ShowNumberOfFords()
   {
       $data = file_get_contents(dirname(__DIR__).'/YOUR_WORK/data.json');
       $array = json_decode($data, true);
@@ -58,7 +128,7 @@ class ExamTest extends TestCase
       $this->assertEquals($expected, $exam->NumberOfFords());
   }
 
-  public function test_Q05_WhichPeopleHaveTheFollowCar()
+  public function test_Q11_WhichPeopleHaveTheFollowCar()
   {
       $data = file_get_contents(dirname(__DIR__).'/YOUR_WORK/data.json');
       $array = json_decode($data, true);
@@ -80,7 +150,7 @@ class ExamTest extends TestCase
       $this->assertEquals($hasCar, $exam->WhoHasSelectedCar($make));
   }
 
-  public function test_Q06_CountAndListNumberOfMales()
+  public function test_Q12_CountAndListNumberOfMales()
   {
     $data = file_get_contents(dirname(__DIR__).'/YOUR_WORK/data.json');
     $array = json_decode($data, true);
@@ -102,7 +172,7 @@ class ExamTest extends TestCase
     $this->assertEquals($output, $exam->CountAndListMales());
   }
 
-  public function test_Q07_ListFirstAndLastName()
+  public function test_Q13_ListFirstAndLastName()
   {
     $data = file_get_contents(dirname(__DIR__).'/YOUR_WORK/data.json');
     $array = json_decode($data, true);
@@ -119,76 +189,25 @@ class ExamTest extends TestCase
     $this->assertEquals($output, $exam->ListFirstAndLastName());
   }
 
-  public function test_Q08_SumOfTwoNumbers()
+  public function test_Q14_CountAllRecords()
   {
-     $exam = new \YOUR_WORK\Exam2019();
-
-     $num1 = NULL; 
-     $num2 = NULL;
-
-     $expected = $num1 + $num2;
-
-     $this->assertEquals($expected, $exam->SumOfTwoNumbers($num1, $num2));
-  }
-
-  public function test_Q09_ProductOfThreeNumbers()
-  {
-    $exam = new \YOUR_WORK\Exam2019();
-
-    $num1 = NULL; 
-    $num2 = NULL;
-    $num3 = NULL;
-
-    $expected = $num1 * $num2 * $num3;
-
-    $this->assertEquals($expected, $exam->ProductOfThreeNumbers($num1, $num2, $num3));
-  }
-
-  public function test_Q10_CountAllRecords()
-  {
-    $exam = new \YOUR_WORK\Exam2019();
-
     $data = file_get_contents(dirname(__DIR__).'/YOUR_WORK/data.json');
     $array = json_decode($data, true);
+
+    $exam = new \YOUR_WORK\Exam2019();
 
     $expected = 100;
 
     $this->assertTrue($expected === $exam->CountAllRecords());
   }
 
-  public function test_Q11_CheckEqualValues()
+  public function test_Q15_ListAllNamesStartingWithLetter()
   {
-    $exam = new \YOUR_WORK\Exam2019();
-
-    $a = 5;
-    $b = "5";
-
-    $expected = ($a == $b);
-  
-    $this->assertTrue($expected);
-    $this->assertEquals($expected, $exam->CheckEqualValues($a, $b));
-  }
-
-  public function test_Q12_CheckEqualValueAndTypes()
-  {
-    $exam = new \YOUR_WORK\Exam2019();
-
-    $a = 5;
-    $b = 5;
-
-    $expected = ($a === $b);
-  
-    $this->assertTrue($expected);
-    $this->assertEquals($expected, $exam->CheckEqualValueAndTypes($a, $b));
-  }
-
-  public function test_Q13_ListAllNamesStartingWithLetter()
-  {
-    $exam = new \YOUR_WORK\Exam2019();
-    $expected = "Franny<br>";
-
     $data = file_get_contents(dirname(__DIR__).'/YOUR_WORK/data.json');
     $array = json_decode($data, true);
+
+    $exam = new \YOUR_WORK\Exam2019();
+    $expected = "Franny<br>";
 
     $checkedNames = [];
 
@@ -211,21 +230,5 @@ class ExamTest extends TestCase
     $this->assertEquals($expected, $exam->ListAllNamesStartingWith("F"));
   }
 
-  public function test_Q14_CheckIfMondayIsPartOfArray()
-  {
-    $exam = new \YOUR_WORK\Exam2019();
 
-    $needle = "Monday";
-
-    $this->assertContains($needle, $exam->FourDayIncludedMonday());
-  }
-
-  public function test_Q15_CheckIfMondayIsNotPartOfArray()
-  {
-    $exam = new \YOUR_WORK\Exam2019();
-
-    $needle = "Monday";
-
-    $this->assertNotContains($needle, $exam->FourDayNotIncludedMonday());
-  }
 }
