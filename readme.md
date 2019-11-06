@@ -30,6 +30,8 @@ public function name-of-function-from-question()
 
 * The use of a Web Browsers outside of getting your GitHub Classroom link (Tauranga Students) is not allowed and will occur an instant 10% penalty for the first time you have been caught and an instant fail if you get caught the second time.
 
+* Check your project in XAMPP before the end of the exam and if you have got no erros in your code, you should see all of the answers listed on the index page. Each question will have a header and be separated by a horizontal line.
+
 # PROJECT PREPARTION (TAURANGA)
 
 1. Accept the classroom project from here:
