@@ -3,3 +3,4 @@ mycode/
 .phpunit.result.cache
 composer.lock
 output.txt
+answers.php
